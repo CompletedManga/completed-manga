@@ -1,0 +1,21 @@
+{
+  "name": "completed-manga-server",
+  "version": "0.0.1",
+  "description": "Completed Manga server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CompletedManga/completed-manga.git"
+  },
+  "keywords": ["comics", "manga", "anime"],
+  "author": "Jason Zhen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CompletedManga/completed-manga/issues"
+  },
+  "homepage": "https://github.com/CompletedManga/completed-manga#readme",
+  "type": "module"
+}
