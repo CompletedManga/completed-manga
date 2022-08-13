@@ -1,0 +1,26 @@
+services:
+  database:
+    container_name: database
+    image: postgres:14.4-alpine
+    restart: always
+    networks:
+      - private
+    secrets:
+      - database-password
+    environment:
+      - POSTGRES_DB=cmdb
+      - POSTGRES_USER=jazhen
+      - POSTGRES_PASSWORD_FILE=/run/secrets/database-password
+    ports:
+      - '5432:5432'
+    volumes:
+      - database-volume:/var/lib/postgresql/data
+networks:
+  public:
+  private:
+volumes:
+  database-volume:
+    driver: local
+secrets:
+  database-password:
+    file: database/secrets/password.txt
