@@ -1,21 +1,36 @@
 {
-  "name": "completed-manga-server",
+  "name": "completed-manga",
   "version": "0.0.1",
-  "description": "Completed Manga server",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Completed Manga",
+  "keywords": [
+    "comics",
+    "manga",
+    "anime"
+  ],
+  "homepage": "https://github.com/CompletedManga/completed-manga#readme",
+  "bugs": {
+    "url": "https://github.com/CompletedManga/completed-manga/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CompletedManga/completed-manga.git"
   },
-  "keywords": ["comics", "manga", "anime"],
-  "author": "Jason Zhen",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CompletedManga/completed-manga/issues"
+  "author": "Jason Zhen",
+  "type": "module",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/CompletedManga/completed-manga#readme",
-  "type": "module"
+  "devDependencies": {
+    "@types/node": "^18.7.3",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

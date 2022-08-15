@@ -1,0 +1,33 @@
+export async function fetchWithRetries({
+  url = '',
+  fetchOptions = {},
+  retryOptions = { retries: 0, retryDelay: 0 },
+}) {
+  const { retries, retryDelay } = retryOptions;
+  try {
+    return await fetch(url, fetchOptions);
+  } catch (e) {
+    if (retries <= 0) {
+      console.log(e);
+      throw new Error(e);
+    }
+    console.log({
+      message: `Request failed, retrying in ${retryDelay} milliseconds...`,
+      error: e.message,
+    });
+    await wait({ timeInMilliseconds: retryDelay });
+    const nextRetryOptions = {
+      ...retryOptions,
+      retries: retries - 1,
+    };
+    console.log(nextRetryOptions);
+    return fetchWithRetries(url, fetchOptions, nextRetryOptions);
+  }
+}
+async function wait({ timeInMilliseconds = 0 }) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, timeInMilliseconds);
+  });
+}
